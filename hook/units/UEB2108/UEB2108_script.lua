@@ -25,6 +25,7 @@
 --I think the ui event for launch nuke sends a message to an expected TacNuke weapon entry,
 --and finding none (at the time only the old CruiseMissile was there), it just gets swallowed up.
 
+LOG("defining william neutron")
 local TStructureUnit = import('/lua/defaultunits.lua').StructureUnit
 local TIFCruiseMissileLauncher = import('/lua/terranweapons.lua').TIFCruiseMissileLauncher
 local EffectTemplate = import('/lua/EffectTemplates.lua')
@@ -33,13 +34,11 @@ UEB2108 = Class(TStructureUnit) {
     Weapons = {
         --CruiseMissile = Class(TIFCruiseMissileLauncher) {
         TacNukeMissile = Class(TIFCruiseMissileLauncher) {
-            FxMuzzleFlash = EffectTemplate.TIFCruiseMissileLaunchBuilding,
-        },
+            FxMuzzleFlash = EffectTemplate.TIFCruiseMissileLaunchBuilding,}
+     },
     OnStopBeingBuilt =
       function(self,builder,layer)
         LOG("built one!")
       end
-
-    },
 }
 TypeClass = UEB2108

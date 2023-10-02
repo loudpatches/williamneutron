@@ -1,6 +1,6 @@
 UnitBlueprint {
     BlueprintId = "ueb2108",
-    Merge = false,  --unsure if we can just ditch this and the ID entry to get the same effect...
+    Merge = false, --unsure if we can just ditch this and the ID entry to get the same effect...
     AI = {
         InitialAutoMode = true,
     },

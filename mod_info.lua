@@ -1,5 +1,5 @@
 name = "William Neutron"
-uid = "19e7be0a-60a4-11ee-8c99-0242ac120002"
+uid = "fffffffe-6e98-4864-9599-4133236eea7f"
 version = 1.1
 copyright = ""
 description = "Static TML Launches Billy Nuke."
