@@ -1,0 +1,245 @@
+UnitBlueprint {
+    BlueprintId = "ueb2108",
+    Merge = false,  --unsure if we can just ditch this and the ID entry to get the same effect...
+    AI = {
+        InitialAutoMode = true,
+    },
+
+    Audio = {
+        Close = Sound {
+            Bank = 'UEB',
+            Cue = 'UEB2108_Doors',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Destroyed = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEB_Destroy_Med_Land',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Open = Sound {
+            Bank = 'UEB',
+            Cue = 'UEB2108_Doors',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        UISelection = Sound {
+            Bank = 'Interface',
+            Cue = 'UEF_Select_Gun',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+
+    Buffs = {},
+	
+    BuildIconSortPriority = 150,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'UEF',
+        'STRUCTURE',
+        'STRATEGIC',
+        'TECH2',
+        'INDIRECTFIRE',
+        'TACTICALMISSILEPLATFORM',
+        'DRAGBUILD',
+        'SILO',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'SORTSTRATEGIC',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 8,
+        Health = 1500,
+        MaxHealth = 1500,
+        RegenRate = 0,
+    },
+
+    Description = '<LOC ueb2108_desc>Tactical Missile Launcher',
+
+    Display = {
+        Abilities = {
+            'Manual Launch required',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'ueb2108_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'ueb2108_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.04,
+    },
+
+    Economy = {
+        BuildCostEnergy = 4000,
+        BuildCostMass = 800,
+        BuildRate = 25,
+        BuildTime = 800,
+
+        RebuildBonusIds = {'ueb2108'},
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Pause = true,
+            --RULEUCC_SiloBuildTactical = true,  --disable ui for tactical build.
+            RULEUCC_Stop = true,
+            -- RULEUCC_Tactical = true,  --disable ui for launch tactical.  
+            RULEUCC_Nuke = { helpText = 'Fire Billy Missile' },
+            RULEUCC_SiloBuildNuke = { helpText = 'Build Billy Missiles' },
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC ueb2108_name>Aloha',
+    },
+
+    Intel = {
+        VisionRadius = 15,
+    },
+
+    Interface = {
+        HelpText = 'Tactical Missile Launcher',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 1,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 0.85,
+    SelectionSizeZ = 0.85,
+    SelectionThickness = 0.48,
+
+    SizeX = 0.75,
+    SizeY = 0.75,
+    SizeZ = 0.75,
+
+    StrategicIconName = 'icon_structure2_missile',
+    StrategicIconSortPriority = 180,
+
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0111_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            CountedProjectile = true,
+			
+            Damage = 0,
+            DamageFriendly = true,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nuclear Warhead',
+            
+            --EnabledByEnhancement = 'EXTacticalNukeSubstitution',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'TacNukeMissile',
+			
+            ManualFire = true,
+            MaxProjectileStorage = 3,
+			
+            MaxRadius = 256,
+            MinRadius = 5,
+			
+            MuzzleVelocity = 8,
+			
+            NukeInnerRingDamage = 12000,
+            NukeInnerRingRadius = 15,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 0,
+            NukeOuterRingDamage = 250,
+            NukeOuterRingRadius = 25,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 0,
+			
+            NukeWeapon = true,
+			
+            ProjectileId = '/mods/BlackopsACUs/projectiles/UEFBilly/UEFBilly_proj.bp',
+            ProjectileLifetime = 80,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle'},
+                    RackBone = 'Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,
+
+            TargetCheckInterval = 1,
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            WeaponRepackTimeout = 3,
+            WeaponUnpackAnimation = '/units/ueb2108/ueb2108_aopen.sca',
+            WeaponUnpackAnimationRate = 2,
+            WeaponUnpacks = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

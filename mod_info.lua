@@ -1,0 +1,13 @@
+name = "William Neutron"
+uid = "19e7be0a-60a4-11ee-8c99-0242ac120002"
+version = 1.1
+copyright = ""
+description = "Static TML Launches Billy Nuke."
+author = "loudpatches"
+--icon = "/mods/BrewLAN_Gameplay/WaterGuard/mod_icon.dds"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+before = {  }
+after = {  }
